@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding:20px;
+        width: 70%;
+        margin-left: 40px;
+      }
+    </style>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      
+    </head>
+    <body>
+        <h1 style="text-align:left ;margin-left:100px">
+            Welcome to Online Quiz Portal
+        </h1>
+        <div>
+            <h2>Active Quizzes are </h2>
+    {% for i in quiz_list %}
+    <table>
+        <tr>
+            <td><h3><strong>{{ i.quiz_name }}</strong></h3></td>
+            <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
+            <td><a href="quiz/{{i.quiz_id}}/"  class="btn btn-success" role="button" >Take me to Quizz</a></td>
+        </tr>
+    </table>
+     {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    {% for i,j,k,l in mylist %}
+</html>
+
+def home():
+    for i in range(Quiz.objects.count()):
+        quiz_list=Quiz.objects.all()[i]
+        quiz_list=str(quiz_list)
+        quiz_list=quiz_list.split(',')
+        quiz_name_list.append(quiz_list[1])
+        quiz_id_list.append(quiz_list[0])
+    qlist = zip(quiz_name_list,quiz_id_list)
+    context={'qlist':qlist}
+    return render(request,'/Quiz/home.html',context)
+
+
+//urls.py
+    path(r'', views.home),
+
+
+
+
+    input[type=submit] {
+        width: 80%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
